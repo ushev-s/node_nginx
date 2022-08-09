@@ -1,0 +1,9 @@
+node_modules/
+config/default.json
+uploads/
+files/
+ssl/
+logs/
+client/.eslintcache
+.eslintcache
+.env
