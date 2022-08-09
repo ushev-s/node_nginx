@@ -4,10 +4,10 @@ const http = require('http');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('<h1>NodeJS App 1</h1>');
+  res.send('<h1>NodeJS App 2</h1><br/><p>Hello World</p>');
 });
 
 const httpServer = http.createServer(app);
-httpServer.listen(5000, () => {
-  console.log(`Server started on port 5000`);
+httpServer.listen(5001, () => {
+  console.log(`Server app2.js started on port 5001`);
 });
