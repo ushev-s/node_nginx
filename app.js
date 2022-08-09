@@ -11,13 +11,13 @@ const app = express();
 //   key: fs.readFileSync('./ssl/svushev_click.rsa.key'),
 // };
 
-app.use((req, res, next) => {
-  if (req.secure) {
-    next();
-  } else {
-    res.redirect(`https://${req.headers.host}${req.url}`);
-  }
-});
+// app.use((req, res, next) => {
+//   if (req.secure) {
+//     next();
+//   } else {
+//     res.redirect(`https://${req.headers.host}${req.url}`);
+//   }
+// });
 
 app.get('/', (req, res) => {
   res.send('<h1>NodeJS App 1</h1>');
