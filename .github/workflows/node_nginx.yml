@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Node Nginx CI
 on:
   push:
     branches: [main]
@@ -16,6 +16,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
+      - name: restart all apps
+        run: pm2 restart all
+        # run: cd frontend
+        # run: npm install
+        # run: sudo service nginx restart
       # - name: build project
       #   run: npm run build
       # - name: unit test

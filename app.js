@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) => {
-  res.send('<h1>NodeJS App 1</h1>');
+  res.send('<h1>NodeJS App 1</h1><h2>message 1</h2>');
 });
 
 //Define Routes
