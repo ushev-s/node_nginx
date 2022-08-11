@@ -14,6 +14,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo NODE_ENV=production >> .env
+          echo DO_MONGO_URI_LOCAL=${{ secrets.DO_MONGO_URI_LOCAL }} >> .env
+          cat .env
       - name: install modules
         run: npm install
       - name: restart all apps
