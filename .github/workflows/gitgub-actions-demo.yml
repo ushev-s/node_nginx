@@ -2,17 +2,15 @@ name: GitHub Actions Demo
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 jobs:
-  init:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: self-hosted
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Staring Node.js ${{ matrix.node-version }}
+      - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
