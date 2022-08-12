@@ -20,8 +20,14 @@ jobs:
           echo NODE_ENV=production >> .env
           echo DO_MONGO_URI_LOCAL=${{ secrets.DO_MONGO_URI_LOCAL }} >> .env
           cat .env
-      - name: install modules
+      - name: build server
         run: npm install
+      - name: build client
+        run: |
+          cd client
+          npm install
+          npm run build
+          cd ..
       - name: restart all apps
         run: pm2 restart all
         # run: cd frontend
