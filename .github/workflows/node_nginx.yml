@@ -33,7 +33,7 @@ jobs:
           git pull origin main
           npm install
           rm -r /home/svushev/node_nginx/client/build/*
-          cp /home/svushev/node_nginx_runner/_work/node_nginx/node_nginx/client/build/* /home/svushev/node_nginx/client/build
+          cp -r /home/svushev/node_nginx_runner/_work/node_nginx/node_nginx/client/build/* /home/svushev/node_nginx/client/build
       - name: restart all apps
         run: pm2 restart all
         # run: cd frontend
