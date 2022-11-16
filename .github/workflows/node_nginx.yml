@@ -27,6 +27,8 @@ jobs:
           cd client
           npm install
           npm run build
+      - name: move build to production
+        run: |
           cd /home/svushev/node_nginx
           git pull origin main
           npm install
